@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class Retrofitviewmodel(private val retrofitrepository: Retrofitrepository):ViewModel() {
 
-val reporesult : List<CityDataItem>
+val reporesult : LiveData<List<CityDataItem>>
     get() = retrofitrepository.citylist
 
     fun getcitydata(){

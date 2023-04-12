@@ -8,14 +8,13 @@ import com.example.nushiftproject.model.utils.Retrofit_services
 
 class Retrofitrepository(private val retrofitServices: Retrofit_services) {
 
- var citylist = MutableList<CityDataItem>()
-  get() =
+ var citylist = MutableLiveData<List<CityDataItem>>()
 
     suspend fun getcitydata(){
         val result = retrofitServices.getcitydetails()
         if(result.body()!=null){
             Log.d(TAG, "getcitydata: "+result.body())
-            citylist = result.body()!!
+            citylist.postValue(result.body())
         }
     }
 }

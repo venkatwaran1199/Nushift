@@ -40,11 +40,11 @@ class Home : Fragment() {
 
         retrofitviewmodel.getcitydata()
 
-/*        retrofitviewmodel.reporesult.observe(viewLifecycleOwner) {
+        retrofitviewmodel.reporesult.observe(viewLifecycleOwner) {
             adapter.setdata(it)
             args.currnewdata?.let { it1 -> adapter.datalist.add(it1)
             adapter.notifyDataSetChanged()}
-            }*/
+            }
 
         /*retrofitviewmodel.reporesult.observe(viewLifecycleOwner) {
             adapter.setdata(it)
@@ -53,11 +53,11 @@ class Home : Fragment() {
             //args.currnewdata?.let { it1 -> retrofitviewmodel.addIssuePost(it1)}
         }*/
 
-        retrofitviewmodel.reporesult.let { adapter.setdata(it) }
 
-        retrofitviewmodel.totaladdeddata.observe(viewLifecycleOwner){
+
+/*        retrofitviewmodel.totaladdeddata.observe(viewLifecycleOwner){
             Log.d(TAG, "onCreateView: "+it)
-        }
+        }*/
 
 
         //Checking
