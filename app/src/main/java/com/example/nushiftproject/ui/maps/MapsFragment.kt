@@ -13,9 +13,11 @@ import com.example.nushiftproject.databinding.FragmentMapsBinding
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment(),OnMapReadyCallback {
@@ -42,8 +44,13 @@ class MapsFragment : Fragment(),OnMapReadyCallback {
         val lat = args.CurrItem.lat
         val long = args.CurrItem.lon
         val sydney = LatLng(lat.toDouble(), long.toDouble())
-        map.addMarker(MarkerOptions().position(sydney).title("Marker in ${args.CurrItem.name}"))
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,15f))
+        map.setInfoWindowAdapter(CustomInfoAdapter(requireContext()))
+        map.addMarker(MarkerOptions()
+            .position(sydney)
+            .title("Name: ${args.CurrItem.name}")
+            .snippet("State: ${args.CurrItem.state}"))
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,15f))
+        //map.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,15f))
     }
 
     override fun onDestroyView() {

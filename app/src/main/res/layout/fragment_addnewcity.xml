@@ -10,64 +10,116 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         tools:context=".ui.addnew.Addnewcity">
 
-        <EditText
-            android:id="@+id/edt_name"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Enter name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginBottom="16dp"
+            android:text="ADD NEW CITY"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/txtinputcityname"
+            app:layout_constraintEnd_toEndOf="@+id/txtinputcityname"
+            app:layout_constraintStart_toStartOf="@+id/txtinputcityname" />
 
-        <EditText
-            android:id="@+id/edt_state"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtinputcityname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Enter state name"
+            android:layout_marginTop="150dp"
+            android:hint="Enter the name of the city"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_city"
+            app:endIconMode="clear_text">
 
-        <EditText
-            android:id="@+id/edt_longitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Enter longitude"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_state" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/edt_latitude"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/state"
+            app:endIconMode="clear_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/txtinputstatename"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Enter latitude"
+            android:layout_marginTop="16dp"
+            android:hint="Enter the name of the state"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_longitude" />
+            app:layout_constraintTop_toBottomOf="@+id/txtinputcityname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/txtinputlongitude"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:startIconDrawable="@drawable/longitude"
+            app:endIconMode="clear_text"
+            android:hint="Longitude"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtinputstatename">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_longitude"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtinputlatitude"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:startIconDrawable="@drawable/latitude"
+            app:endIconMode="clear_text"
+            android:hint="Latitude"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtinputlongitude">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_latitude"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                 />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/btn_addcity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:text="Add new city"
-            app:layout_constraintEnd_toEndOf="@+id/edt_latitude"
-            app:layout_constraintStart_toStartOf="@+id/edt_latitude"
-            app:layout_constraintTop_toBottomOf="@+id/edt_latitude" />
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/txtinputlatitude"
+            app:layout_constraintStart_toStartOf="@+id/txtinputlatitude"
+            app:layout_constraintTop_toBottomOf="@+id/txtinputlatitude" />
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

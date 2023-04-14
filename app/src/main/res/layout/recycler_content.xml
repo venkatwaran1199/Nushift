@@ -8,52 +8,66 @@
         <variable
             name="Citydataitem"
             type="com.example.nushiftproject.model.data.CityDataItem" />
-
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="30dp"
+        app:cardElevation="20dp"
         app:cardCornerRadius="20dp"
         android:layout_margin="10dp"
-        android:send_to_mapsfragment="@{Citydataitem}"
-        >
+        android:send_to_mapsfragment="@{Citydataitem}">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/recyclerbg">
 
 
         <TextView
             android:id="@+id/txtcityname"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/amethysta"
+            android:hint="Chennai"
             android:text="@{Citydataitem.name}"
-            android:hint="Name: Chennai"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_addlocation"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtstatename"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginStart="45dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@{Citydataitem.state}"
+            android:fontFamily="@font/amethysta"
             android:hint="State: Tamil nadu"
-            android:textColor="#A88080"
-            android:textSize="25sp"
+            android:text="@{`State: `+Citydataitem.state}"
+            android:textColor="#FA9F3E"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/txtcityname"
+            app:layout_constraintEnd_toStartOf="@+id/img_addlocation"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtcityname" />
+
+        <ImageView
+            android:id="@+id/img_addlocation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/location" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

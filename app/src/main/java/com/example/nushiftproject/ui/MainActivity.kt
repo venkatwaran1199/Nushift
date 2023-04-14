@@ -15,10 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val navhostfragment = supportFragmentManager.findFragmentById(R.id.navhostfragment) as NavHostFragment
         navcontroller = navhostfragment.findNavController()
-        setupActionBarWithNavController(navcontroller)
+        //setupActionBarWithNavController(navcontroller)
     }
 
-    override fun onNavigateUp(): Boolean {
-        return navcontroller.navigateUp() || super.onNavigateUp()
-    }
 }

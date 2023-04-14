@@ -10,6 +10,8 @@ class Retrofitrepository(private val retrofitServices: Retrofit_services) {
 
  var citylist = MutableLiveData<List<CityDataItem>>()
 
+//    var citylist = MutableLiveData<List<CityDataItem>>()
+
     suspend fun getcitydata(){
         val result = retrofitServices.getcitydetails()
         if(result.body()!=null){
